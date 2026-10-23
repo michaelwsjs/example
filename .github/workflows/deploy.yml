@@ -26,6 +26,10 @@ jobs:
       - name: Build
         run: yarn build
 
+      # 新增这一行，将 index.html 复制为 404.html
+      - name: Create 404.html for SPA routing
+        run: cp dist/index.html dist/404.html
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
