@@ -1,0 +1,712 @@
+/**
+ * 公共样式
+ */
+/**
+ * body[content="body"] 选择器使css权重更高
+ */
+body[content="body"] {
+  $baseThemeColor: (
+    0: #000,
+    1: #111,
+    2: #222,
+    3: #333,
+    4: #444,
+    5: #555,
+    6: #666,
+    7: #777,
+    8: #888,
+    9: #999,
+    white: #fff,
+    red: red,
+    green: green,
+    yellow: yellow,
+    blue: blue,
+    purple: #5925dc,
+    brown: #b54708,
+    deep-purple-red: #26121d,
+    tag-purple: #5925dc,
+    tag-gray: #f2f2f2,
+    tag-green: #027a48,
+    tag-blue: #175cd3,
+    tag-brown: #b54708,
+    primary: var(--color-primary),
+    primary-0: var(--color-primary-0),
+    primary-1: var(--color-primary-1),
+    primary-2: var(--color-primary-2),
+    primary-3: var(--color-primary-3),
+    primary-4: var(--color-primary-4),
+    primary-5: var(--color-primary-5),
+    primary-6: var(--color-primary-6),
+    primary-7: var(--color-primary-7),
+    primary-8: var(--color-primary-8),
+    primary-9: var(--color-primary-9),
+    success: var(--color-success),
+    success-0: var(--color-success-0),
+    success-1: var(--color-success-1),
+    success-2: var(--color-success-2),
+    success-3: var(--color-success-3),
+    success-4: var(--color-success-4),
+    success-5: var(--color-success-5),
+    success-6: var(--color-success-6),
+    success-7: var(--color-success-7),
+    success-8: var(--color-success-8),
+    success-9: var(--color-success-9),
+    warning: var(--color-warning),
+    warning-0: var(--color-warning-0),
+    warning-1: var(--color-warning-1),
+    warning-2: var(--color-warning-2),
+    warning-3: var(--color-warning-3),
+    warning-4: var(--color-warning-4),
+    warning-5: var(--color-warning-5),
+    warning-6: var(--color-warning-6),
+    warning-7: var(--color-warning-7),
+    warning-8: var(--color-warning-8),
+    warning-9: var(--color-warning-9),
+    danger: var(--color-danger),
+    error: var(--color-error),
+    error-0: var(--color-error-0),
+    error-1: var(--color-error-1),
+    error-2: var(--color-error-2),
+    error-3: var(--color-error-3),
+    error-4: var(--color-error-4),
+    error-5: var(--color-error-5),
+    error-6: var(--color-error-6),
+    error-7: var(--color-error-7),
+    error-8: var(--color-error-8),
+    error-9: var(--color-error-9),
+    info: var(--color-info),
+    info-0: var(--color-info-0),
+    info-1: var(--color-info-1),
+    info-2: var(--color-info-2),
+    info-3: var(--color-info-3),
+    info-4: var(--color-info-4),
+    info-5: var(--color-info-5),
+    info-6: var(--color-info-6),
+    info-7: var(--color-info-7),
+    info-8: var(--color-info-8),
+    info-9: var(--color-info-9),
+    gray: var(--color-gray),
+    gray-0: var(--color-gray-0),
+    gray-1: var(--color-gray-1),
+    gray-2: var(--color-gray-2),
+    gray-3: var(--color-gray-3),
+    gray-4: var(--color-gray-4),
+    gray-5: var(--color-gray-5),
+    gray-6: var(--color-gray-6),
+    gray-7: var(--color-gray-7),
+    gray-8: var(--color-gray-8),
+    gray-9: var(--color-gray-9),
+    neutral-0: var(--color-neutral-0),
+    neutral-1: var(--color-neutral-1),
+    neutral-2: var(--color-neutral-2),
+    neutral-3: var(--color-neutral-3),
+    neutral-4: var(--color-neutral-4),
+    neutral-5: var(--color-neutral-5),
+    neutral-6: var(--color-neutral-6),
+    neutral-7: var(--color-neutral-7),
+    neutral-8: var(--color-neutral-8),
+    neutral-9: var(--color-neutral-9),
+    neutral-100: var(--color-neutral-100),
+    neutral-200: var(--color-neutral-200),
+    neutral-300: var(--color-neutral-300),
+    neutral-400: var(--color-neutral-400),
+    neutral-500: var(--color-neutral-500),
+    neutral-600: var(--color-neutral-600),
+    neutral-700: var(--color-neutral-700),
+    neutral-800: var(--color-neutral-800),
+    neutral-900: var(--color-neutral-900),
+    text: var(--color-text),
+    text-strong: var(--color-text-strong),
+    text-soft: var(--color-text-soft),
+    text-placeholder: var(--color-text-placeholder),
+    text-sub: var(--color-text-sub),
+    transparent: transparent
+  );
+
+  $zIndex: (
+    1: 1,
+    10: 10,
+    100: 100,
+    500: 500,
+    1000: 1000,
+    1500: 1500,
+    2000: 2000,
+    3000: 3000
+  );
+
+  $evenSetting:(
+    4: 4,
+    6: 6,
+    8: 8,
+    12: 12,
+    14: 14,
+    16: 16,
+    18: 18,
+    24: 24,
+    26: 26,
+    28: 28,
+    32: 32,
+    34: 34,
+    36: 36
+  );
+
+  @each $c, $cv in $baseThemeColor {
+    // color
+    .color-#{"" + $c},
+    .hover-color-#{"" + $c}:hover {
+      color: #{$cv};
+    }
+    // background-color
+    .bg-color-#{"" + $c} ,
+    .hover-bg-#{"" + $c}:hover {
+      background-color: #{$cv};
+    }
+    // border
+    .border-#{"" + $c}{
+      border: 1px solid #{$cv};
+    }
+  }
+
+  @each $c, $cv in $zIndex {
+    // z-index
+    .z-index-#{$c} {
+      z-index: #{$cv};
+    }
+  }
+
+  @each $c, $cv in $evenSetting {
+    // border-radius
+    .b-r-#{$c} {
+      border-radius: #{$cv}px;
+    }
+    // gap
+    .gap-#{$c} {
+      gap: #{$cv}px;
+    }
+    // padding
+    .p-a-#{$c} {
+      padding: #{$cv}px
+    }
+    .p-t-#{$c} {
+      padding-top: #{$cv}px;
+    }
+    .p-r-#{$c} {
+      padding-right: #{$cv}px;
+    }
+    .p-b-#{$c} {
+      padding-bottom: #{$cv}px;
+    }
+    .p-l-#{$c} {
+      padding-left: #{$cv}px;
+    }
+    // margin
+    .m-a-#{$c} {
+      margin: #{$cv}px
+    }
+    .m-t-#{$c} {
+      margin-top: #{$cv}px;
+    }
+    .m-r-#{$c} {
+      margin-right: #{$cv}px;
+    }
+    .m-b-#{$c} {
+      margin-bottom: #{$cv}px;
+    }
+    .m-l-#{$c} {
+      margin-left: #{$cv}px;
+    }
+    // line-height
+    .l-h-#{$c} {
+      line-height: #{$cv}px;
+    }
+    // top
+    .top-#{$c} {
+      top: #{$cv}px;
+    }
+    // bottom
+    .bottom-#{$c} {
+      bottom: #{$cv}px;
+    }
+    // left
+    .left-#{$c} {
+      left: #{$cv}px;
+    }
+    // right
+    .right-#{$c} {
+      right: #{$cv}px;
+    }
+  }
+
+  @for $i from 8 through 40 {
+    // font-size
+    .f-s-#{$i} {
+      font-size: #{$i}px;
+    }
+  }
+
+  @for $i from 1 through 10 {
+    // color-opacity
+    .color-opacity-#{$i} {
+      color: rgba(255, 255, 255, $i * 0.1);
+    }
+    // background-color-opacity
+    .bg-opacity-#{$i} {
+      background-color: rgba(0, 0, 0, $i * 0.1);
+    }
+    // border-bottom
+    .border-bottom-#{$i}{
+      border-bottom: 1px solid rgba(153, 153, 153, $i * 0.1);
+    }
+    // border-radius
+    .b-r-#{$i * 5} {
+      border-radius: #{$i * 5}px;
+    }
+    // letter-spacing
+    .l-s-#{$i} {
+      letter-spacing: #{$i}px;
+    }
+    // font-weight
+    .f-w-#{$i * 100} {
+      font-weight: #{$i * 100};
+    }
+  }
+
+  @for $i from 1 through 5 {
+    // box-shadow
+    .b-s-#{$i*5} {
+      box-shadow: 0 0 $i * 5px rgba(153, 153, 153, 0.5);
+    }
+    // ellipsis
+    .ellipsis-#{$i} {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: #{$i};
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  @for $i from 0 through 9 {
+    // opacity actives hover
+    .opacity-#{$i},
+    .actives-#{$i}:active,
+    .hover-opacity-#{$i}:hover {
+      opacity: $i * 0.1;
+    }
+    // transition
+    .transition-#{$i} {
+      transition: all $i * 0.1s;
+    }
+  }
+
+  @for $i from 5 through 9 {
+    // transform-scale
+    .transform-scale-#{$i} {
+      transform: scale($i * 0.1);
+    }
+  }
+
+  // 0 - 80 => 5的倍数
+  @for $i from 0 through 80 {
+    @if ($i % 5)==0 {
+      // padding
+      .p-a-#{$i} {
+        padding: #{$i}px
+      }
+      .p-t-#{$i} {
+        padding-top: #{$i}px;
+      }
+      .p-r-#{$i} {
+        padding-right: #{$i}px;
+      }
+      .p-b-#{$i} {
+        padding-bottom: #{$i}px;
+      }
+      .p-l-#{$i} {
+        padding-left: #{$i}px;
+      }
+      // margin
+      .m-a-#{$i} {
+        margin: #{$i}px
+      }
+      .m-t-#{$i} {
+        margin-top: #{$i}px;
+      }
+      .m-r-#{$i} {
+        margin-right: #{$i}px;
+      }
+      .m-b-#{$i} {
+        margin-bottom: #{$i}px;
+      }
+      .m-l-#{$i} {
+        margin-left: #{$i}px;
+      }
+      // line-height
+      .l-h-#{$i} {
+        line-height: #{$i}px;
+      }
+      // top
+      .top-#{$i} {
+        top: #{$i}px;
+      }
+      // bottom
+      .bottom-#{$i} {
+        bottom: #{$i}px;
+      }
+      // left
+      .left-#{$i} {
+        left: #{$i}px;
+      }
+      // right
+      .right-#{$i} {
+        right: #{$i}px;
+      }
+    }
+    // width
+    .w-#{$i*5} {
+      width: #{$i*5}px;
+    }
+    .min-w-#{$i*5} {
+      min-width: #{$i*5}px;
+    }
+    .max-w-#{$i*5} {
+      max-width: #{$i*5}px;
+    }
+    // height
+    .h-#{$i*5} {
+      height: #{$i*5}px;
+    }
+    .min-h-#{$i*5} {
+      min-height: #{$i*5}px;
+    }
+    .max-h-#{$i*5} {
+      max-height: #{$i*5}px;
+    }
+    .gap-#{$i*5} {
+      gap: #{$i*5}px;
+    }
+  }
+
+  .w-full {
+    width: 100%;
+  }
+
+  .h-full {
+    height: 100%;
+  }
+
+  .w-auto {
+    width: auto;
+  }
+
+  .h-auto {
+    height: auto;
+  }
+
+  .font-weight {
+    font-weight: bolder;
+  }
+
+  .b-r-circle {
+    border-radius: 100%;
+  }
+
+  .white-space-nowrap {
+    white-space: nowrap;
+  }
+
+  .white-space-pre-wrap {
+    white-space: pre-wrap;
+  }
+
+  /**首字母大写*/
+  .text-capitalize {
+    text-transform: capitalize;
+  }
+
+  /**字母大写*/
+  .text-uppercase {
+    text-transform: uppercase;
+  }
+
+  /**字母小写*/
+  .text-lowercase {
+    text-transform: lowercase;
+  }
+
+  .text-decoration-line-through {
+    text-decoration-line: line-through;
+  }
+
+  .text-decoration-underline {
+    text-decoration: underline;
+  }
+
+  .word-break-all {
+    word-break: break-all;
+  }
+
+  .word-break-word {
+    word-break: break-word;
+  }
+
+  .word-break-keep {
+    word-break: keep-all;
+  }
+
+  /* float */
+  .float-left {
+    float: left;
+  }
+
+  .float-right {
+    float: right;
+  }
+
+  .clear-both {
+    clear: both;
+  }
+
+  .clear-both-after::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+
+  /* flex */
+  .flex {
+    display: flex;
+  }
+
+  .flex1 {
+    flex: 1;
+  }
+
+  .flex2 {
+    flex: 2;
+  }
+
+  .flex3 {
+    flex: 3;
+  }
+
+  .flex4 {
+    flex: 4;
+  }
+
+  .flex5 {
+    flex: 5;
+  }
+
+  .flex-row {
+    flex-direction: row;
+  }
+
+  .flex-col {
+    flex-direction: column;
+  }
+
+  .flex-column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .flex-justify-center {
+    justify-content: center;
+  }
+
+  .flex-align-center {
+    align-items: center;
+  }
+
+  .flex-center {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .flex-justify-start {
+    justify-content: flex-start;
+  }
+
+  .flex-justify-center {
+    justify-content: center;
+  }
+
+  .flex-justify-end {
+    justify-content: flex-end;
+  }
+
+  .flex-justify-space-between {
+    justify-content: space-between;
+  }
+
+  .align-items-start {
+    align-items: flex-start;
+  }
+
+  .align-items-center {
+    align-items: center;
+  }
+
+  .align-items-end {
+    align-items: flex-end;
+  }
+
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+
+  .text-align-left {
+    text-align: left;
+  }
+
+  .text-align-center {
+    text-align: center;
+  }
+
+  .text-align-right {
+    text-align: right;
+  }
+
+  /* overflow */
+  .overflow-auto {
+    overflow: auto;
+  }
+
+  .overflow-hidden {
+    overflow: hidden;
+  }
+
+  .overflow-x-hidden {
+    overflow-x: hidden;
+  }
+
+  .overflow-y-hidden {
+    overflow-y: hidden;
+  }
+
+  .overflow-x-scroll {
+    overflow-x: scroll;
+  }
+
+  .overflow-y-scroll {
+    overflow-y: scroll;
+  }
+
+  .overflow-x-auto {
+    overflow-x: auto;
+  }
+
+  .overflow-y-auto {
+    overflow-y: auto;
+  }
+
+  .overflow-hidden-auto {
+    overflow: hidden auto;
+  }
+
+  .overflow-auto-hidden {
+    overflow: auto hidden
+  }
+
+  /* display */
+  .display-block {
+    display: block;
+  }
+
+  .display-none {
+    display: none;
+  }
+
+  .display-inline-block {
+    display: inline-block;
+  }
+
+  .display-inherit {
+    display: inherit;
+  }
+
+  /* position */
+  .position-relative {
+    position: relative;
+  }
+
+  .position-absolute {
+    position: absolute;
+  }
+
+  .position-fixed {
+    position: fixed;
+  }
+
+  .position-center {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  /* box-sizing */
+  .box-sizing {
+    box-sizing: border-box;
+  }
+
+  .box-sizing-content-box {
+    box-sizing: content-box;
+  }
+
+  .box-sizing-inherit {
+    box-sizing: inherit;
+  }
+
+  .box-sizing-initial {
+    box-sizing: initial;
+  }
+
+  .box-sizing-unset {
+    box-sizing: unset;
+  }
+
+  /* text-indent */
+  .text-indent1 {
+    text-indent: 1em;
+  }
+
+  .text-indent2 {
+    text-indent: 2em;
+  }
+
+  /* cursor */
+  .cursor-pointer {
+    cursor: pointer;
+  }
+
+  .cursor-move {
+    cursor: move;
+  }
+
+  .cursor-auto {
+    cursor: auto;
+  }
+
+  /* object-fit */
+  .object-fit-contain {
+    object-fit: contain;
+  }
+
+  .object-fit-cover {
+    object-fit: cover;
+  }
+
+  .object-fit-fill {
+    object-fit: fill;
+  }
+
+  .object-fit-none {
+    object-fit: none;
+  }
+
+  .object-fit-scale-down {
+    object-fit: scale-down;
+  }
+}
